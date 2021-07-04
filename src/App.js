@@ -8,7 +8,7 @@ function App() {
   const [listaDeiClienti, setListaDeiClienti] = useState([]);
 
   const aggiungiCliente = () => {
-    Axios.post("http://localhost:3001/aggiungiCliente", {
+    Axios.post("https://eyemix.herokuapp.com/aggiungiCliente", {
       nome: nome,
       età: età,
     }).then((response) => {
@@ -21,7 +21,7 @@ function App() {
 
   const modificaCliente = (id) => {
     const newEtà = prompt("Inserisci nuovamente l'età: ");
-    Axios.put("http://localhost:3001/modificaCliente", {
+    Axios.put("https://eyemix.herokuapp.com/modificaCliente", {
       newEtà: newEtà,
       id: id,
     }).then(() => {
@@ -34,16 +34,18 @@ function App() {
   };
 
   const rimuoviCliente = (id) => {
-    Axios.delete(`http://localhost:3001/rimuoviCliente/${id}`).then(() => {
-      setListaDeiClienti(
-        listaDeiClienti.filter((val) => {
-          return val._id != id;
-        })
-      );
-    });
+    Axios.delete(`https://eyemix.herokuapp.com/rimuoviCliente/${id}`).then(
+      () => {
+        setListaDeiClienti(
+          listaDeiClienti.filter((val) => {
+            return val._id != id;
+          })
+        );
+      }
+    );
   };
   useEffect(() => {
-    Axios.get("http://localhost:3001/read")
+    Axios.get("https://eyemix.herokuapp.com/read")
       .then((response) => {
         setListaDeiClienti(response.data);
       })
