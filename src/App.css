@@ -1,0 +1,80 @@
+.App {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.inputs {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(76, 188, 207);
+  flex-direction: column;
+  box-shadow: 2px 2px 5px blue;
+}
+
+.inputs input {
+  width: 200px;
+  height: 30px;
+  font-size: 15px;
+  margin: 10px;
+  padding-left: 10px;
+}
+
+.inputs button {
+  border: none;
+  width: 150px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.inputs button:hover {
+  cursor: pointer;
+}
+
+.listaDeiClienti {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.clientiContainer {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+}
+
+.clienti {
+  width: 500px;
+  height: 50px;
+  background-color: blue;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: flex;
+}
+
+.clienti h3 {
+  margin-left: 15px;
+}
+
+.clientiContainer button {
+  border: 2px solid black;
+  border-color: black;
+  cursor: pointer;
+}
+
+#rimuoviBtn {
+  border-left: none;
+}
